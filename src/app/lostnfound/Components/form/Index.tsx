@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import InputField from "./Input";
@@ -37,7 +37,7 @@ export const Form = () => {
     setIsAnimating(false);
     setTimeout(() => {
       closeModal();
-    }, 300); 
+    }, 300);
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -123,69 +123,72 @@ export const Form = () => {
     },
   ];
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  if (!validate()) {
-    showToast("Please fill in all the fields", "error");
-    return;
-  }
+    if (!validate()) {
+      showToast("Please fill in all the fields", "error");
+      return;
+    }
 
-  setIsSubmitting(true);
+    setIsSubmitting(true);
 
-  try {
-    const result = await registerParticipant(formData);
+    try {
+      const result = await registerParticipant(formData);
 
-    if (result.success) {
+      if (result.success) {
+        showToast(result.message || "Registration successful!", "success");
+        setFormData({ fullName: "", email: "", phone: "", location: "" });
+        setErrors({ fullName: "", email: "", phone: "", location: "" });
+        setTimeout(() => handleClose(), 2000);
+      } else {
+        showToast(
+          result.message || "Registration failed. Please try again later.",
+          "error"
+        );
+      }
+    } catch (error) {
+      console.error("Error:", error);
       showToast(
-        result.message || "Registration successful!",
-        "success"
-      );
-      setFormData({ fullName: "", email: "", phone: "", location: "" });
-      setErrors({ fullName: "", email: "", phone: "", location: "" });
-      setTimeout(() => handleClose(), 2000);
-    } else {
-      showToast(
-        result.message || "Registration failed. Please try again later.",
+        "Something went wrong! Please check your connection and try again.",
         "error"
       );
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error("Error:", error);
-    showToast(
-      "Something went wrong! Please check your connection and try again.",
-      "error"
-    );
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
+  };
 
   if (!isModalOpen) return null;
-  
+
   return (
-    <div 
+    <div
       className={`w-full h-screen flex justify-center items-center bg-black/40 fixed top-0 z-50 transition-opacity duration-300 ${
-        isAnimating ? 'opacity-100' : 'opacity-0'
+        isAnimating ? "opacity-100" : "opacity-0"
       }`}
       onClick={handleBackdropClick}
     >
-      <div 
+      <div
         className={`relative flex flex-col items-center bg-[#FFFFFF] rounded-2xl shadow-lg w-[90%] md:w-[30%] p-8 transform transition-all duration-300 ease-out ${
-          isAnimating 
-            ? 'translate-y-0 scale-100 opacity-100' 
-            : 'translate-y-8 scale-95 opacity-0'
+          isAnimating
+            ? "translate-y-0 scale-100 opacity-100"
+            : "translate-y-8 scale-95 opacity-0"
         }`}
       >
-        
-        <button onClick={handleClose} className="bg-[#FFFFFF] font-bold rounded-full w-10 h-10 flex items-center justify-center absolute top-2 cursor-pointer shadow-xl">
+        <button
+          onClick={handleClose}
+          className="bg-[#FFFFFF] font-bold rounded-full w-10 h-10 flex items-center justify-center absolute top-2 cursor-pointer shadow-xl"
+        >
           ✕
         </button>
 
-        <h2 className="text-2xl font-medium text-center  before:w-[75%] md:before:w-[120%] flex justify-center before:h-[4px] before:rounded-full before:bg-[#67B5DC] relative before:absolute before:top-[100%] mt-8">Register</h2>
+        <h2 className="text-2xl font-medium text-center  before:w-[75%] md:before:w-[120%] flex justify-center before:h-[4px] before:rounded-full before:bg-[#67B5DC] relative before:absolute before:top-[100%] mt-8">
+          Register
+        </h2>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4 w-full">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-4 mt-4 w-full"
+        >
           {inputFields.map((field, index) => (
             <div key={index}>
               <InputField

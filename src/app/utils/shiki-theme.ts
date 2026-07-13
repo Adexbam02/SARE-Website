@@ -6,7 +6,7 @@ export const sareDarkTheme: ThemeInput = {
 
   fg: "#000000", // default text
   bg: "#5ba7ce",
-  
+
   settings: [
     {
       scope: ["comment"],

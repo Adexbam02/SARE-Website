@@ -13,21 +13,27 @@ function AboutHeader() {
         backgroundPosition: "center",
       }}
     >
-      <motion.div className="flex flex-col items-start md:items-center justify-center mt-[15rem] md:mt-[100px]"
+      <motion.div
+        className="flex flex-col items-start md:items-center justify-center mt-[15rem] md:mt-[100px]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}>
-        <motion.h1 className="text-[48px] md:text-[64px] font-bold leading-[120%]"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.h1
+          className="text-[48px] md:text-[64px] font-bold leading-[120%]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}>
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+        >
           ABOUT SARE
         </motion.h1>
 
-        <motion.p className="text-[18px] md:text-[20px] leading-[120%] md:text-center text-left md:w-[700px]"
+        <motion.p
+          className="text-[18px] md:text-[20px] leading-[120%] md:text-center text-left md:w-[700px]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}>
+          transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+        >
           Bringing together students, innovators, and leaders in Agricultural &
           Environmental Engineering to create real-world impact
         </motion.p>

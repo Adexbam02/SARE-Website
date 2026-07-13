@@ -3,19 +3,20 @@
 import { google } from "googleapis";
 import { Resend } from "resend";
 
-
 async function getGoogleAuth() {
   let privateKey = process.env.GOOGLE_PRIVATE_KEY;
 
   if (!privateKey) {
-    throw new Error("GOOGLE_PRIVATE_KEY is not defined in environment variables.");
+    throw new Error(
+      "GOOGLE_PRIVATE_KEY is not defined in environment variables."
+    );
   }
 
   // Handle common formatting issues
   const formattedKey = privateKey
-    .replace(/\\n/g, "\n")              // Convert literal \n to real newlines
-    .replace(/^"(.*)"$/, "$1")         // Remove surrounding quotes if any
-    .replace(/"/g, "")                 // Final quote cleanup
+    .replace(/\\n/g, "\n") // Convert literal \n to real newlines
+    .replace(/^"(.*)"$/, "$1") // Remove surrounding quotes if any
+    .replace(/"/g, "") // Final quote cleanup
     .trim();
 
   const auth = new google.auth.GoogleAuth({
@@ -33,20 +34,37 @@ export async function registerParticipant(formData: {
   email: string;
   phone: string;
 }) {
-  const { 
-    RESEND_API_KEY, 
-    RESEND_SENDER_EMAIL, 
-    GOOGLE_SHEET_ID, 
-    GOOGLE_CLIENT_EMAIL, 
-    GOOGLE_PRIVATE_KEY 
+  const {
+    RESEND_API_KEY,
+    RESEND_SENDER_EMAIL,
+    GOOGLE_SHEET_ID,
+    GOOGLE_CLIENT_EMAIL,
+    GOOGLE_PRIVATE_KEY,
   } = process.env;
 
   // 1. Strict Environment Validation
-  if (!RESEND_API_KEY) return { success: false, message: "Missing RESEND_API_KEY in production." };
-  if (!RESEND_SENDER_EMAIL) return { success: false, message: "Missing RESEND_SENDER_EMAIL in production." };
-  if (!GOOGLE_SHEET_ID) return { success: false, message: "Missing GOOGLE_SHEET_ID in production." };
-  if (!GOOGLE_CLIENT_EMAIL) return { success: false, message: "Missing GOOGLE_CLIENT_EMAIL in production." };
-  if (!GOOGLE_PRIVATE_KEY) return { success: false, message: "Missing GOOGLE_PRIVATE_KEY in production." };
+  if (!RESEND_API_KEY)
+    return { success: false, message: "Missing RESEND_API_KEY in production." };
+  if (!RESEND_SENDER_EMAIL)
+    return {
+      success: false,
+      message: "Missing RESEND_SENDER_EMAIL in production.",
+    };
+  if (!GOOGLE_SHEET_ID)
+    return {
+      success: false,
+      message: "Missing GOOGLE_SHEET_ID in production.",
+    };
+  if (!GOOGLE_CLIENT_EMAIL)
+    return {
+      success: false,
+      message: "Missing GOOGLE_CLIENT_EMAIL in production.",
+    };
+  if (!GOOGLE_PRIVATE_KEY)
+    return {
+      success: false,
+      message: "Missing GOOGLE_PRIVATE_KEY in production.",
+    };
 
   const resend = new Resend(RESEND_API_KEY);
   const SPREADSHEET_ID = GOOGLE_SHEET_ID;
@@ -66,7 +84,8 @@ export async function registerParticipant(formData: {
       spreadsheetId: SPREADSHEET_ID,
     });
 
-    const sheetName = spreadsheet.data.sheets?.[0]?.properties?.title || "Sheet1";
+    const sheetName =
+      spreadsheet.data.sheets?.[0]?.properties?.title || "Sheet1";
     const range = `${sheetName}!A:E`;
 
     // 2. Check for duplicates
@@ -77,14 +96,17 @@ export async function registerParticipant(formData: {
 
     const rows = getResponse.data.values || [];
     const emailIndex = 2; // Assuming Column C is Email (A=0, B=1, C=2)
-    
+
     const isDuplicate = rows.some((row) => row[emailIndex] === email);
     if (isDuplicate) {
-      return { success: false, message: "This email address is already registered." };
+      return {
+        success: false,
+        message: "This email address is already registered.",
+      };
     }
 
     // 3. Generate Unique ID (IBS2.0-001)
-    const nextIdNumber = rows.length; 
+    const nextIdNumber = rows.length;
     const id = `IBS2.0-${String(nextIdNumber).padStart(3, "0")}`;
     const timestamp = new Date().toLocaleString();
 
@@ -98,7 +120,9 @@ export async function registerParticipant(formData: {
       },
     });
 
-    console.log(`Log to Sheet: ${sheetName} (ID: ${SPREADSHEET_ID}), Status: ${appendResponse.status}`);
+    console.log(
+      `Log to Sheet: ${sheetName} (ID: ${SPREADSHEET_ID}), Status: ${appendResponse.status}`
+    );
 
     // 5. Send Styled Email via Resend
     const { data, error } = await resend.emails.send({
@@ -138,16 +162,20 @@ export async function registerParticipant(formData: {
 
     if (error) {
       console.error("Resend Error:", error);
-      return { 
-        success: true, 
-        message: "Registration successful! (Email delivery failed but your spot is reserved)", 
-        id 
+      return {
+        success: true,
+        message:
+          "Registration successful! (Email delivery failed but your spot is reserved)",
+        id,
       };
     }
 
     return { success: true, message: "Registration successful!", id };
   } catch (err: any) {
     console.error("DEBUG: Full Registration Error:", err);
-    return { success: false, message: err.message || "An unexpected error occurred." };
+    return {
+      success: false,
+      message: err.message || "An unexpected error occurred.",
+    };
   }
 }

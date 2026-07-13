@@ -1,6 +1,6 @@
 "use client";
 import { useModal } from "../../context/ModalContext";
-import { useRegistration } from '../../context/RegistrationContext';
+import { useRegistration } from "../../context/RegistrationContext";
 
 export const RegisterButton = () => {
   const { openModal } = useModal();

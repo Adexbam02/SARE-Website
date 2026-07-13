@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
-    user: process.env.MY_GMAIL_USER, 
+    user: process.env.MY_GMAIL_USER,
     pass: process.env.GMAIL_APP_PASSWORD,
   },
 });
@@ -59,10 +59,10 @@ async function sendConfirmationEmail(to: string, name: string, type: string) {
   }
 
   await transporter.sendMail({
-    from: `"Society of Agricultural Robotics Engineers" <${process.env.MY_GMAIL_USER}>`, 
-    to: to, 
+    from: `"Society of Agricultural Robotics Engineers" <${process.env.MY_GMAIL_USER}>`,
+    to: to,
     subject: subject,
-    html: htmlContent, 
+    html: htmlContent,
   });
 }
 
@@ -80,7 +80,7 @@ export async function POST(req: Request) {
       currentSkills,
       teamworkExperience,
       teamworkContribution,
-      question, 
+      question,
     } = body;
 
     const auth = new google.auth.GoogleAuth({
@@ -100,7 +100,7 @@ export async function POST(req: Request) {
 
     // --- CASE 1: Newsletter ---
     if (email && !fullName && !whatsapp && !department && !question) {
-      const range = "Newsletter!A:B"; 
+      const range = "Newsletter!A:B";
       await sheets.spreadsheets.values.append({
         spreadsheetId,
         range,
@@ -109,12 +109,12 @@ export async function POST(req: Request) {
           values: [[email, new Date().toISOString()]],
         },
       });
-      
+
       // Send Newsletter Email
       if (email) {
         await sendConfirmationEmail(email, "Subscriber", "newsletter");
       }
-      
+
       return NextResponse.json({
         success: true,
         message: "✅ Newsletter signup successful!",
@@ -123,7 +123,7 @@ export async function POST(req: Request) {
 
     // --- CASE 2: FAQ ---
     if (question && !fullName && !whatsapp && !department) {
-      const range = "FAQs!A:B"; 
+      const range = "FAQs!A:B";
       await sheets.spreadsheets.values.append({
         spreadsheetId,
         range,
@@ -139,7 +139,7 @@ export async function POST(req: Request) {
     }
 
     // --- CASE 3: Application ---
-    const range = "ApplicationResponse!A:J"; 
+    const range = "ApplicationResponse!A:J";
     await sheets.spreadsheets.values.append({
       spreadsheetId,
       range,
@@ -164,14 +164,17 @@ export async function POST(req: Request) {
 
     // Send Application Email
     if (email) {
-       await sendConfirmationEmail(email, fullName || "Applicant", "application");
+      await sendConfirmationEmail(
+        email,
+        fullName || "Applicant",
+        "application"
+      );
     }
 
     return NextResponse.json({
       success: true,
       message: "✅ Application submitted successfully!",
     });
-
   } catch (error: any) {
     console.error("API Error:", error); // Helpful for debugging
     return NextResponse.json(

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRef, useState, useEffect } from "react";
 // import { ChevronLeft, ChevronRight } from "lucide-react"; // optional icons
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
@@ -6,7 +6,6 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import SARE from "../../assets/images/CTRL LABS Ice Breaker - Reveal.png";
 import SARE2 from "../../assets/images/CTRL LABS Ice Breaker - Teaser (1).png";
 import Image from "next/image";
-
 
 export const Carousel = () => {
   const images = [SARE, SARE2]; // Added more images

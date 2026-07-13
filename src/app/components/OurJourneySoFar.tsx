@@ -9,7 +9,7 @@ function OurJourneySoFar() {
         <h3 className="font-medium md:text-[36px] leading-[120%]">
           Our Journey so far
         </h3>
-        <Image src={Divider} alt=""/>
+        <Image src={Divider} alt="" />
       </div>
       <OurJourney />
     </div>

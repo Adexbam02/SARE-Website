@@ -1,10 +1,10 @@
 export const Tags = () => {
   const tags = [
-    "Build with Purpose",
-    "Break Barriers",
-    "Automate for Impact",
-    "Think Entrepreneurially",
-    "Collaborate for Success",
+    "Autonomous Navigation in the Real World",
+    "Levels of Autonomy",
+    "Sensing and Perception",
+    "Localization and Mapping",
+    "Path Planning and Control",
   ];
   return (
     <div className="flex gap-4 flex-col md:flex-row md:flex-wrap">

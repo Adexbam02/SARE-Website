@@ -1,6 +1,6 @@
-import type { ToastProps } from "../../types/Toast"
-import Error from "../../assets/gifs/Error.gif"
-import Success from "../../assets/gifs/Success.gif"
+import type { ToastProps } from "../../types/Toast";
+import Error from "../../assets/gifs/Error.gif";
+import Success from "../../assets/gifs/Success.gif";
 import Image from "next/image";
 
 export const Toast: React.FC<ToastProps> = ({ message, type }) => {
@@ -28,11 +28,18 @@ export const Toast: React.FC<ToastProps> = ({ message, type }) => {
         <h2 className="text-[12px] font-medium">
           {type.charAt(0).toUpperCase() + type.slice(1)}
         </h2>
-        <p className="md:text-[15px] text-[10px] font-medium text-[#1F2937]">{message}</p>
+        <p className="md:text-[15px] text-[10px] font-medium text-[#1F2937]">
+          {message}
+        </p>
       </div>
       {styleConfig?.icon && (
         <div className="ml-4 w-[40%] h-full flex justify-end items-center">
-          <Image unoptimized alt="" src={styleConfig.icon}  className="h-10 w-10" />
+          <Image
+            unoptimized
+            alt=""
+            src={styleConfig.icon}
+            className="h-10 w-10"
+          />
         </div>
       )}
     </div>

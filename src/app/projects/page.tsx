@@ -17,7 +17,7 @@ export default function ProjectsPage() {
 
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
   const [statusFilter, setStatusFilter] = useState<ProjectStatus | "All">(
-    "All",
+    "All"
   );
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
@@ -59,7 +59,7 @@ export default function ProjectsPage() {
     setSelectedCategories((prev) =>
       prev.includes(category)
         ? prev.filter((c) => c !== category)
-        : [...prev, category],
+        : [...prev, category]
     );
   };
 

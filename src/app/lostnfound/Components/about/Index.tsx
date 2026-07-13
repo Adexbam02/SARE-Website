@@ -3,11 +3,12 @@ import { Tags } from "./Tags";
 
 export const About = () => {
   const details = [
-      "Connect with industry leaders and fellow innovators.",
-      "Learn cutting-edge techniques in robotics and AI.",
-      "Be Inspired by real-world applications and success stories.",
-      "Network for future collaborations and career opportunities."
-  ]
+    "Understand the technology enabling machines to navigate our world seamlessly.",
+    "Learn cutting-edge techniques in robotic planning, perception, and decision-making.",
+    "Explore real-world applications where autonomous navigation is changing industries.",
+    "Connect with fellow tech enthusiasts and experts in the field of robotics.",
+  ];
+
   return (
     <div className="w-full h-max flex flex-col mt-12 gap-4">
       <h1 className="font-medium w-max text-[28px] before:w-[75%] before:h-[4px] before:rounded-full before:bg-[#67B5DC] relative before:absolute before:top-[100%]">
@@ -15,22 +16,36 @@ export const About = () => {
       </h1>
       <div className="text-[15px]">
         <p>
-          The CTRL LABS Icebreaker Session 2.0 is SARE's flagship event designed to ignite the spark of innovation in aspiring engineers and problem-solvers. This year, we delve into the core philosophy of "Take CTRL of Innovation: Build. Break. Automate."
+          Lost and Found: The Science Behind Autonomous Navigation is an
+          exclusive webinar designed to demystify the technology guiding the
+          future of robotics. Autonomous navigation is quietly becoming part of
+          our daily lives, and this session explores the intricate science that
+          makes it possible.
         </p>
+        <br />
         <p>
-          This session is a unique opportunity to connect with leading minds in robotics and AI, gain practical insights, and network with fellow student innovators. Whether you're new to robotics, an experienced coder, or an aspiring entrepreneur, this event will challenge your perspectives and equip you with the mindset to transform ideas into impactful solutions. <br />
+          Every day, more robots are being designed to move, avoid obstacles,
+          and complete tasks without human guidance. Whether you&apos;re a
+          robotics enthusiast, a seasoned engineer, or simply curious about the
+          future of tech, this webinar provides a unique opportunity to dive
+          deep into how machines perceive and interact with their environments.
           <br />
-          We believe true innovation comes from understanding how to Build robust systems, daring to Break conventional boundaries, and mastering the art of Automate complex processes. Join us to explore how these principles are driving the future of agriculture and environmental technology.
+          We believe that understanding the future of automation requires
+          looking under the hood of today&apos;s cutting-edge systems. Join us
+          to explore the complete journey of autonomous machines—from basic
+          mobility to complex, real-time problem-solving.
         </p>
-        <p className="mt-4">During the session, we’ll cover how to:</p>
+        <p className="mt-4">
+          During the session, we&apos;ll cover key areas including:
+        </p>
       </div>
       <Tags />
-      <h1>Don't miss this opportunity to:</h1>
-        <ul className="list-disc list-inside mt-2">
-          {details.map((detail, index) => (
-            <li key={index}>{detail}</li>
-          ))}
-        </ul>
+      <h1>Don&apos;t miss this opportunity to:</h1>
+      <ul className="list-disc list-inside mt-2">
+        {details.map((detail, index) => (
+          <li key={index}>{detail}</li>
+        ))}
+      </ul>
       <Carousel />
     </div>
   );

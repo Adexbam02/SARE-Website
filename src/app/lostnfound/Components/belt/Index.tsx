@@ -56,9 +56,15 @@ export const Belt = () => {
           />
         </div>
         <div className="h-max flex flex-col gap-1">
-          <small className="text-[10px] md:text-[12px] font-normal text-[#4B5563]">Register now for:</small>
-                <h1 className="text-[18px] md:text-[24px] font-medium text-[#1F2937]">CTRL LABS Icebreaker Session 2.0</h1>
-                <p className="text-[12px] md:text-[14px] font-normal text-[#4B5563]">Take CTRL of Innovation: Build. Break. Automate.</p>
+          <small className="text-[10px] md:text-[12px] font-normal text-[#4B5563]">
+            Register now for:
+          </small>
+          <h1 className="text-[18px] md:text-[24px] font-medium text-[#1F2937]">
+            CTRL LABS Icebreaker Session 2.0
+          </h1>
+          <p className="text-[12px] md:text-[14px] font-normal text-[#4B5563]">
+            Take CTRL of Innovation: Build. Break. Automate.
+          </p>
         </div>
       </div>
 

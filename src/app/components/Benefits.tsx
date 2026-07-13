@@ -14,7 +14,7 @@ import { useRef } from "react";
 import { useInView, Variants } from "framer-motion";
 import { CAD, Kennedy, LoveBinProto } from "../../../public/images/images"; // Note: Kennedy is imported but unused in logic below, kept it just in case.
 
-/** * 1. DEFINE THE RESPONSIVE SHAPES 
+/** * 1. DEFINE THE RESPONSIVE SHAPES
  * We have two distinct shapes here.
  */
 const BenefitsClipPaths = () => (
@@ -22,16 +22,16 @@ const BenefitsClipPaths = () => (
     <defs>
       {/* LARGE CARD: 260x400 => scale(0.0038461, 0.0025) */}
       <clipPath id="benefits-large-clip" clipPathUnits="objectBoundingBox">
-        <path 
-          d="M260 353C260 360.3 254.3 366 247 366H222.7C215.4 366 209.7 371.7 209.7 379V387C209.7 394.3 204 400 196.7 400H17.5C10.2 400 4.5 394.3 4.5 387V13.5C4.5 6.2 10.2 0.5 17.5 0.5H247C254.3 0.5 260 6.2 260 13.5V353Z" 
+        <path
+          d="M260 353C260 360.3 254.3 366 247 366H222.7C215.4 366 209.7 371.7 209.7 379V387C209.7 394.3 204 400 196.7 400H17.5C10.2 400 4.5 394.3 4.5 387V13.5C4.5 6.2 10.2 0.5 17.5 0.5H247C254.3 0.5 260 6.2 260 13.5V353Z"
           transform="scale(0.0038461, 0.0025)"
         />
       </clipPath>
 
       {/* SMALL CARDS: 260x188 => scale(0.0038461, 0.0053191) */}
       <clipPath id="benefits-small-clip" clipPathUnits="objectBoundingBox">
-        <path 
-          d="M260 139.67C260 146.59 252.59 153 244.67 153H219.67C211.01 153 204 159.98 204 168.67V174.67C204 181.59 196.59 188 188.67 188H16C7.163 188 0 181.59 0 174.67V12.67C0 5.163 7.163 0 16 0H244.67C252.59 0 260 5.163 260 12.67V139.67Z" 
+        <path
+          d="M260 139.67C260 146.59 252.59 153 244.67 153H219.67C211.01 153 204 159.98 204 168.67V174.67C204 181.59 196.59 188 188.67 188H16C7.163 188 0 181.59 0 174.67V12.67C0 5.163 7.163 0 16 0H244.67C252.59 0 260 5.163 260 12.67V139.67Z"
           transform="scale(0.0038461, 0.0053191)"
         />
       </clipPath>
@@ -112,7 +112,7 @@ function Benefits() {
         {/* Right Column (Cards) */}
         <motion.div
           variants={containerVariants}
-          className="w-full md:w-[55%] flex flex-row-reverse md:flex-row h-[400px] justify-between gap-2" 
+          className="w-full md:w-[55%] flex flex-row-reverse md:flex-row h-[400px] justify-between gap-2"
           // Added 'gap-2' here to prevent cards from touching if they flex
         >
           <motion.div
@@ -126,7 +126,7 @@ function Benefits() {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 // 3. APPLY LARGE CARD ID
-                clipPath: "url(#benefits-large-clip)", 
+                clipPath: "url(#benefits-large-clip)",
               }}
             >
               <div className="relative w-[100%] h-[160px] md:h-full overflow-hidden  flex justify-items-end items-end ">

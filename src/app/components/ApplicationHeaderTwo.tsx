@@ -9,11 +9,11 @@ import CardLarge from "../UI/CardLarge";
 import { useState } from "react";
 
 function ApplicationHeaderTwo() {
-    const [showApplicationInfo, setShowApplicationInfo] = useState(false);
-  
-    const handleCardClick = () => {
-      setShowApplicationInfo(true);
-    };
+  const [showApplicationInfo, setShowApplicationInfo] = useState(false);
+
+  const handleCardClick = () => {
+    setShowApplicationInfo(true);
+  };
   return (
     <div className="hidden md:flex p-[2rem] md:px-[96px]  flex-col items-center justify-center text-center gap-4 overflow-hidden">
       <h1 className="text-text-primary font-bold text-[48px] leading-[120%] ">

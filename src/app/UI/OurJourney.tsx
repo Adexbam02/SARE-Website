@@ -59,9 +59,7 @@ function JourneyItem({
     >
       {/* Left — date */}
       <div className="flex items-start flex-col gap-1">
-        <p className="text-[16px] font-normal leading-[148%]">
-          {journey.date}
-        </p>
+        <p className="text-[16px] font-normal leading-[148%]">{journey.date}</p>
         <h3 className="text-text-primary text-[36px] font-medium leading-[120%]">
           {journey.month}
         </h3>

@@ -8,7 +8,8 @@ import {
   FAQDataProjects,
 } from "../../../public/data";
 import HighlightHead from "../UI/props/HighlightHead";
-import { Plus, ARIghtBlue } from "../../../public/images/images";''
+import { Plus, ARIghtBlue } from "../../../public/images/images";
+("");
 
 const categories = [
   { key: "general", label: "General", data: FAQDataGeneral },
@@ -90,7 +91,11 @@ function FAQs({ colour }: BackgroundColour) {
                       : "bg-background-disabled text-text-secondary"
                   }`}
                 >
-                  <Image src={ARIghtBlue} alt="" className={`${activeCategory === cat.key ? "opacity-100" : "opacity-0"} duration-500 transition ease-in-out`} />
+                  <Image
+                    src={ARIghtBlue}
+                    alt=""
+                    className={`${activeCategory === cat.key ? "opacity-100" : "opacity-0"} duration-500 transition ease-in-out`}
+                  />
                   {cat.label}
                 </span>
               ))}
