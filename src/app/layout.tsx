@@ -20,7 +20,7 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.className}  antialiased overflow-x-hidden`}
       >
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="h-max w-full">{children}</div>
         {/* <Footer /> */}
       </body>
