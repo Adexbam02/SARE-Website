@@ -1,5 +1,5 @@
 import Image from "next/image";
-import InstructorImage from "../../assets/images/Arabi.jpg"; // Placeholder for instructor image
+import InstructorImage from "../../assets/images/Abdullahi pic.jpg"; // Placeholder for instructor image
 import { Social } from "./Social";
 export const Instructor = () => {
   return (
@@ -21,10 +21,10 @@ export const Instructor = () => {
         </div>
         <div className="w-full md:w-[400px] h-max flex flex-col gap-4">
           <div className="flex flex-col">
-            <h1 className="text-[28px] font-normal">Cyprian Arabi</h1>
+            <h1 className="text-[28px] font-normal">Bello Abdullahi</h1>
             <div className="flex gap-1 text-[14px]">
               <span className="font-medium">
-                CAD Engineer/Automobile Intern
+                Robotics Engineer
               </span>
               <span className="text-[#67B5DC] font-light">
                 <a href="https://www.linkedin.com/">@Genais Auto</a>
@@ -36,9 +36,7 @@ export const Instructor = () => {
           </div>
           <div className="flex flex-col gap-2">
             <p className="text-[16px] text-[#4B5563] font-normal">
-              “Most people can model parts. Fewer people understand how those
-              parts relate, move, and depend on each other. Once you understand
-              joints, CAD stops being drawing and starts being engineering.”
+              “Autonomous navigation isn't just about getting robots from point A to point B. It’s about merging AI and IoT to create intelligent systems that can safely and effectively solve the complex challenges of the real world.”
             </p>
           </div>
         </div>
