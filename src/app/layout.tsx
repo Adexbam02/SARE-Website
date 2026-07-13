@@ -22,7 +22,7 @@ export default function RootLayout({
       >
         <Navbar />
         <div className="h-max w-full">{children}</div>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
