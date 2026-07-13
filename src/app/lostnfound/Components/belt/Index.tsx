@@ -60,10 +60,10 @@ export const Belt = () => {
             Register now for:
           </small>
           <h1 className="text-[18px] md:text-[24px] font-medium text-[#1F2937]">
-            CTRL LABS Icebreaker Session 2.0
+            Lost & Found
           </h1>
           <p className="text-[12px] md:text-[14px] font-normal text-[#4B5563]">
-            Take CTRL of Innovation: Build. Break. Automate.
+            The Science Behind Autonomous Navigation
           </p>
         </div>
       </div>
