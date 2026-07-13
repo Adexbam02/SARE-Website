@@ -11,8 +11,8 @@ export const Landing = () => {
   return (
     <div className="w-full h-max flex flex-col relative">
       <div className="w-full flex flex-col">
-        <h1 className="text-[#1F2937] text-[36px] md:text-[48px] font-medium">CTRL LABS Icebreaker <br /> Session 2.0</h1>
-        <small className="text-[#4B5563] text-[16px] md:text-[14px] font-normal">Take CTRL of Innovation: Build. Break. Automate.</small>
+        <h1 className="text-[#1F2937] text-[36px] md:text-[48px] font-medium">Lost & <br />Found.</h1>
+        <small className="text-[#4B5563] text-[16px] md:text-[14px] font-normal">The Science behind Autonomous Navigation.</small>
       </div>
       <div className="w-full h-max min-h-[40px] flex justify-center items-center md:justify-between mt-4 flex-col gap-4 md:gap-0 md:flex-row ">
         <Timer/>

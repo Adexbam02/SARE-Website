@@ -11,11 +11,13 @@ export const Form = () => {
     fullName: "",
     email: "",
     phone: "",
+    location: "",
   });
   const [errors, setErrors] = useState({
     fullName: "",
     email: "",
     phone: "",
+    location: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -45,7 +47,7 @@ export const Form = () => {
   };
 
   const validate = () => {
-    const newErrors = { fullName: "", email: "", phone: "" };
+    const newErrors = { fullName: "", email: "", phone: "", location: "" };
     let isValid = true;
 
     if (!formData.fullName.trim()) {
@@ -66,6 +68,11 @@ export const Form = () => {
       isValid = false;
     } else if (!/^\d{10,15}$/.test(formData.phone)) {
       newErrors.phone = "Enter a valid phone number";
+      isValid = false;
+    }
+
+    if (!formData.location.trim()) {
+      newErrors.location = "Location is required";
       isValid = false;
     }
 
@@ -104,6 +111,16 @@ export const Form = () => {
         setFormData({ ...formData, phone: e.target.value }),
       type: "tel",
     },
+    {
+      label: "Location",
+      placeholder: "Where will you be joining us from....",
+      name: "location",
+      value: formData.location,
+      error: errors.location,
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
+        setFormData({ ...formData, location: e.target.value }),
+      type: "text",
+    },
   ];
 
 const handleSubmit = async (e: React.FormEvent) => {
@@ -124,8 +141,8 @@ const handleSubmit = async (e: React.FormEvent) => {
         result.message || "Registration successful!",
         "success"
       );
-      setFormData({ fullName: "", email: "", phone: "" });
-      setErrors({ fullName: "", email: "", phone: "" });
+      setFormData({ fullName: "", email: "", phone: "", location: "" });
+      setErrors({ fullName: "", email: "", phone: "", location: "" });
       setTimeout(() => handleClose(), 2000);
     } else {
       showToast(
