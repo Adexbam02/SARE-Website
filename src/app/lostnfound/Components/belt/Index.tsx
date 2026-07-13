@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { RegisterButton } from "../button/Register";
 import { ShareButton } from "../button/Share";
-import SARE from "../../assets/images/CTRL LABS Ice Breaker - Reveal.png";
+import SARE from "../../assets/images/SARE - Lost & Found - Teaser_120754.png";
+import SARE_2 from "../../assets/images/SARE - Lost & Found - General Flyer_120826.png";
 import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -50,7 +51,7 @@ export const Belt = () => {
             className="object-cover w-full h-full absolute top-0 rounded-lg rotate-[-8deg] shadow-2xl"
           />
           <Image
-            src={SARE}
+            src={SARE_2}
             alt="S.A.R.E. is Cooking"
             className="object-cover w-full h-full absolute top-0 rounded-lg"
           />
