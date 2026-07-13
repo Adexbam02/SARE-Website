@@ -17,11 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.className}  antialiased overflow-x-hidden`}>
+      <body
+        className={`${spaceGrotesk.className}  antialiased overflow-x-hidden`}
+      >
         <Navbar />
-        <div className="h-max w-full">
-          {children}
-        </div>
+        <div className="h-max w-full">{children}</div>
         <Footer />
       </body>
     </html>

@@ -94,10 +94,10 @@ function Discovery() {
           {/* Right column with two stacked cards */}
           <div className="grid grid-rows-2 gap-3">
             <motion.div variants={itemVariants} className="relative">
-              <NormalCard dimen="h-[100%]"/>
+              <NormalCard dimen="h-[100%]" />
             </motion.div>
             <motion.div variants={itemVariants} className="relative">
-              <NormalCard dimen="h-[50%]"/>
+              <NormalCard dimen="h-[50%]" />
             </motion.div>
           </div>
         </motion.div>

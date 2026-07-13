@@ -3,7 +3,7 @@ import { ArrowSlant, Kennedy } from "../../../public/images/images";
 import Link from "next/link";
 
 interface Dimension {
-  dimen?: string; 
+  dimen?: string;
 }
 
 function NormalCard({ dimen }: Dimension) {

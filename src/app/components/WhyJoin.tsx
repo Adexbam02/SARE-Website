@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView, Variants } from "framer-motion";
 
-/** * 1. DEFINE THE RESPONSIVE SHAPE 
+/** * 1. DEFINE THE RESPONSIVE SHAPE
  * Original Path Dimensions: 350px width x 280px height
  */
 const WhyJoinClipPath = () => (
@@ -17,8 +17,8 @@ const WhyJoinClipPath = () => (
         {/* Transformation: scale(1/350, 1/280) 
             => scale(0.0028571, 0.0035714)
         */}
-        <path 
-          d="M282 0C290.6 0 297 7.2 297 16V24C297 32.8 304.2 40 313 40H335C343.6 40 350 47.2 350 56V264C350 272.8 343.6 280 335 280H15C7.2 280 0 272.8 0 264V16C0 7.2 7.2 0 15 0H282Z" 
+        <path
+          d="M282 0C290.6 0 297 7.2 297 16V24C297 32.8 304.2 40 313 40H335C343.6 40 350 47.2 350 56V264C350 272.8 343.6 280 335 280H15C7.2 280 0 272.8 0 264V16C0 7.2 7.2 0 15 0H282Z"
           transform="scale(0.0028571, 0.0035714)"
         />
       </clipPath>
@@ -52,7 +52,6 @@ function WhyJoin() {
 
   return (
     <div ref={ref} className="py-[24px] px-[2rem] md:px-[96px] overflow-hidden">
-      
       {/* 2. INJECT THE SVG DEFINITION */}
       <WhyJoinClipPath />
 
@@ -94,7 +93,7 @@ function WhyJoin() {
               className="relative bg-highlight p-[16px] w-[382px] h-[364px] rounded-[16px] gap-[8px] flex flex-col items-center justify-center"
             >
               {/* Image Container with Responsive Clip Path */}
-              <div 
+              <div
                 className="w-full h-[280px] overflow-hidden"
                 // 3. APPLY THE CLIP PATH HERE
                 style={{ clipPath: "url(#why-join-clip)" }}
@@ -105,7 +104,7 @@ function WhyJoin() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              
+
               <p className="text-[18px] text-text-primary leading-[120%] text-left">
                 {item.description}
               </p>

@@ -41,7 +41,7 @@
 //     <motion.button
 //       disabled={zeroLeft}
 //       onClick={handleCardClick}
-//       className={`flex items-center justify-center flex-shrink-0 whitespace-nowrap  gap-2  bg-primary-blue hover:bg-primary-blue-hover 
+//       className={`flex items-center justify-center flex-shrink-0 whitespace-nowrap  gap-2  bg-primary-blue hover:bg-primary-blue-hover
 //         transition-all ease-in-out duration-300 font-bold text-[16px] text-white p-[10px] rounded-[35px] cursor-pointer md:w-fit
 //         ${
 //           zeroLeft ? "opacity-50 cursor-not-allowed hover:bg-primary-blue" : ""
@@ -104,7 +104,7 @@
 //               <Link
 //                 key={nav.id}
 //                 href={nav.link}
-//                 className={`flex items-center justify-center mx-4 text-[16px] rounded-3xl px-4 py-2 transition-all ease-in-out duration-200 
+//                 className={`flex items-center justify-center mx-4 text-[16px] rounded-3xl px-4 py-2 transition-all ease-in-out duration-200
 //                 text-text-primary hover:text-primary-blue  ${
 //                   pathname === "/ibs2.0" ? "hidden" : ""
 //                 }
@@ -145,7 +145,7 @@
 //           <Link
 //             href="#"
 //             onClick={handleCardClick}
-//             className="flex items-center justify-center flex-shrink-0 whitespace-nowrap  gap-2  bg-primary-blue hover:bg-primary-blue-hover 
+//             className="flex items-center justify-center flex-shrink-0 whitespace-nowrap  gap-2  bg-primary-blue hover:bg-primary-blue-hover
 //         transition-all ease-in-out duration-300 font-bold text-[16px] text-white p-[10px] rounded-[35px] cursor-pointer md:w-fit"
 //           >
 //             <Image
@@ -167,7 +167,6 @@
 // }
 
 // export default Navbar;
-
 
 "use client";
 

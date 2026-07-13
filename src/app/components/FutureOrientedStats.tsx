@@ -36,7 +36,9 @@ function FutureOrientedStats() {
                 <h4 className="text-[24px] text-white font-medium leading-[120%]">
                   {stat.title}
                 </h4>
-                <p className="text-[16px] leading-[148%] text-white mt-2">{stat.description}</p>
+                <p className="text-[16px] leading-[148%] text-white mt-2">
+                  {stat.description}
+                </p>
               </div>
             </div>
           ))}

@@ -72,7 +72,10 @@ function Join() {
   );
 
   return (
-    <div ref={ref} className="py-[24px] px-[1rem] md:py-[48px] md:px-[96px] -z-50">
+    <div
+      ref={ref}
+      className="py-[24px] px-[1rem] md:py-[48px] md:px-[96px] -z-50"
+    >
       {/* this form stays at root, not tied to layout */}
       <AnimatePresence>
         {showApplicationInfo && (

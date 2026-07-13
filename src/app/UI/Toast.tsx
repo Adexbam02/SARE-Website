@@ -41,9 +41,15 @@ type ToastProps = {
   onClose?: () => void;
 };
 
-export default function Toast({ open, type = "success", message, onClose }: ToastProps) {
+export default function Toast({
+  open,
+  type = "success",
+  message,
+  onClose,
+}: ToastProps) {
   const bgColor = type === "success" ? "bg-green-50" : "bg-red-50";
-  const borderColor = type === "success" ? "border-green-200" : "border-red-200";
+  const borderColor =
+    type === "success" ? "border-green-200" : "border-red-200";
   const textColor = type === "success" ? "text-green-900" : "text-red-900";
 
   return (

@@ -13,8 +13,7 @@ function NavItem({ nav, pathname, open, setOpen }: Props) {
   const isActive = pathname === nav.link;
   const isButton = nav.id === 5;
 
-  const showIcon =
-    isActive && [1, 2, 3, 5].includes(nav.id);
+  const showIcon = isActive && [1, 2, 3, 5].includes(nav.id);
 
   const commonClasses = `
     flex items-center justify-center mx-4 text-[16px] rounded-3xl px-4 py-2
@@ -25,14 +24,10 @@ function NavItem({ nav, pathname, open, setOpen }: Props) {
 
   const content = (
     <>
-      {showIcon && (
-        <Image src={nav.icon} alt={nav.name} className="mr-2" />
-      )}
+      {showIcon && <Image src={nav.icon} alt={nav.name} className="mr-2" />}
 
       <span className="flex items-center whitespace-nowrap">
-        <p className={isActive ? "text-primary-blue" : ""}>
-          {nav.name}
-        </p>
+        <p className={isActive ? "text-primary-blue" : ""}>{nav.name}</p>
 
         {nav.id === 4 && (
           <Image

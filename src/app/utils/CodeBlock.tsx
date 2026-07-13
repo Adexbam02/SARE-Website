@@ -49,7 +49,7 @@ export default function CodeBlock({ files }: { files: CodeFile[] }) {
       </span>
 
       {/* HEADER */}
-      <div className="w-full flex items-end justify-between gap-[20px] overflow-hidden" >
+      <div className="w-full flex items-end justify-between gap-[20px] overflow-hidden">
         {/* Tabs */}
         <div className="flex items-center gap-[2px] md:w-[85%] overflow-hidden">
           {files.map((file, i) => (
@@ -84,7 +84,10 @@ export default function CodeBlock({ files }: { files: CodeFile[] }) {
             {copied ? (
               <CopyCheck className="text-primary-blue" size={14} />
             ) : (
-              <Files className="text-primary-blue w-[14px] h-[14px]" size={14} />
+              <Files
+                className="text-primary-blue w-[14px] h-[14px]"
+                size={14}
+              />
             )}
           </span>
         </div>
