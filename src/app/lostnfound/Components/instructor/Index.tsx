@@ -27,7 +27,7 @@ export const Instructor = () => {
                 Robotics Engineer
               </span>
               <span className="text-[#67B5DC] font-light">
-                <a href="https://www.linkedin.com/">@Genais Auto</a>
+                <a href="https://www.linkedin.com/">@NETCO</a>
               </span>
             </div>
           </div>
