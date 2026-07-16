@@ -26,7 +26,12 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <ToastContext.Provider value={{ showToast }}>
       {children}
-      <Toast open={open} type={type} message={message} onClose={() => setOpen(false)} />
+      <Toast
+        open={open}
+        type={type}
+        message={message}
+        onClose={() => setOpen(false)}
+      />
     </ToastContext.Provider>
   );
 };

@@ -13,21 +13,18 @@ const EXPLORE_ITEMS = [
     image: "/images/projectexcos.png",
     link: "/blog",
     description: "See the innovations we're building.",
-
   },
   {
     title: "Partnerships",
     image: "/images/projectexcos.png",
     link: "/partnerships",
     description: "See the innovations we're building.",
-
   },
   {
     title: "SARE Closet",
     image: "/images/projectexcos.png",
     link: "/closet",
     description: "See the innovations we're building.",
-
   },
 ];
 
@@ -37,7 +34,16 @@ export const ExploreSection = () => {
       {/* Top Tag */}
       <div className="mb-10">
         <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#E0F2FE] text-[#67B5DC] rounded-full text-sm font-medium">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <path d="M5 12h14m-7-7 7 7-7 7" />
           </svg>
           Explore more
@@ -53,9 +59,12 @@ export const ExploreSection = () => {
               <h3 className="text-[28px] md:text-[36px] font-bold text-[#1E293B] mb-6 tracking-tight">
                 {item.title}
               </h3>
-              
+
               {/* Image Card */}
-              <Link href={item.link} className="relative group block overflow-hidden rounded-[24px]">
+              <Link
+                href={item.link}
+                className="relative group block overflow-hidden rounded-[24px]"
+              >
                 <div className="relative aspect-[3/5] w-full transition-transform duration-500 group-hover:scale-105">
                   <Image
                     src={item.image}
@@ -63,11 +72,22 @@ export const ExploreSection = () => {
                     fill
                     className="object-cover"
                   />
-                  
+
                   {/* Action Button (Top Right) */}
                   <div className="absolute top-0 right-0 z-10 w-12 h-10 bg-[#67B5DC] rounded-full flex items-center justify-center text-white shadow-lg transition-all group-hover:scale-110">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                    >
+                      <path
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </div>
 

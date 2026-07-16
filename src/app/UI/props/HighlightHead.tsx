@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ARIghtBlue } from "../../../../public/images/images"
+import { ARIghtBlue } from "../../../../public/images/images";
 
 interface HighlightHeadProps {
   title: string;

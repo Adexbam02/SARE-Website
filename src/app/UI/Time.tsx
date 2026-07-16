@@ -16,7 +16,9 @@ function Time() {
       <div className=" flex items-start justify-center gap-2">
         <p className="flex flex-col items-center">
           <span className="timebox">{days < 10 ? `0${days}` : days}</span>
-          <span className="text-[12px] md:text-[15px] font-medium text-text-secondary">Days</span>
+          <span className="text-[12px] md:text-[15px] font-medium text-text-secondary">
+            Days
+          </span>
         </p>
 
         <h1 className="text-text-primary font-bold text-[40px] ">:</h1>
@@ -24,23 +26,33 @@ function Time() {
       <div className=" flex items-start justify-center gap-2">
         <p className="flex flex-col items-center">
           <span className="timebox">{hours < 10 ? `0${hours}` : hours}</span>
-          <span className="text-[12px] md:text-[15px] font-medium text-text-secondary">Hours</span>
+          <span className="text-[12px] md:text-[15px] font-medium text-text-secondary">
+            Hours
+          </span>
         </p>
 
         <h1 className="text-text-primary font-bold text-[40px] ">:</h1>
       </div>
       <div className=" flex items-start justify-center gap-2">
         <p className="flex flex-col items-center">
-          <span className="timebox">{minutes < 10 ? `0${minutes}` : minutes}</span>
-          <span className="text-[12px] md:text-[15px] font-medium text-text-secondary">Minutes</span>
+          <span className="timebox">
+            {minutes < 10 ? `0${minutes}` : minutes}
+          </span>
+          <span className="text-[12px] md:text-[15px] font-medium text-text-secondary">
+            Minutes
+          </span>
         </p>
 
         <h1 className="text-text-primary font-bold text-[40px] ">:</h1>
       </div>
       <div className=" flex items-start justify-center gap-2">
         <p className="flex flex-col items-center">
-          <span className="timebox">{seconds < 10 ? `0${seconds}` : seconds}</span>
-          <span className="text-[12px] md:text-[15px] font-medium text-text-secondary">Seconds</span>
+          <span className="timebox">
+            {seconds < 10 ? `0${seconds}` : seconds}
+          </span>
+          <span className="text-[12px] md:text-[15px] font-medium text-text-secondary">
+            Seconds
+          </span>
         </p>
       </div>
     </div>

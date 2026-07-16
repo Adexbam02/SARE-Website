@@ -6,7 +6,7 @@ interface Styles {
   styles?: string;
 }
 
-/** * 1. DEFINE THE RESPONSIVE SHAPE 
+/** * 1. DEFINE THE RESPONSIVE SHAPE
  * Original Dimensions derived from path: ~197px width x ~160.6px height
  */
 const SmallCardClipPath = () => (
@@ -16,8 +16,8 @@ const SmallCardClipPath = () => (
         {/* Transformation: scale(1/197, 1/160.6) 
             => scale(0.0050761, 0.0062266)
         */}
-        <path 
-          d="M125 -0.98C133.837 -0.98 141 6.05 141 14.72V22.6C141 31.32 148.163 38.4 157 38.4H181C189.837 38.4 197 45.48 197 54.1V144.8C197 153.52 189.837 160.6 181 160.6H16C7.163 160.6 0 153.52 0 144.8V14.72C0 6.05 7.163 -0.98 16 -0.98H125Z" 
+        <path
+          d="M125 -0.98C133.837 -0.98 141 6.05 141 14.72V22.6C141 31.32 148.163 38.4 157 38.4H181C189.837 38.4 197 45.48 197 54.1V144.8C197 153.52 189.837 160.6 181 160.6H16C7.163 160.6 0 153.52 0 144.8V14.72C0 6.05 7.163 -0.98 16 -0.98H125Z"
           transform="scale(0.0050761, 0.0062266)"
         />
       </clipPath>
@@ -55,10 +55,10 @@ function SmallApplicationCards({ styles }: Styles) {
                The w-full here ensures it takes the grid width.
             */}
             <div className="relative w-full h-[160px]">
-              <div 
+              <div
                 className="relative w-full h-[160px] rounded-md p-3 overflow-hidden flex justify-items-end items-end"
                 // 3. APPLY THE RESPONSIVE ID HERE
-                style={{ clipPath: "url(#small-card-clip)" }} 
+                style={{ clipPath: "url(#small-card-clip)" }}
               >
                 <Image
                   src={point.img}
