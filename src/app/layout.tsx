@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sareengineers.com"),
+  metadataBase: new URL("https://sarengineers.com"),
   title: {
     default: "SARE | Society of Agricultural Robotic Engineers",
     template: "%s | SARE",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Bringing together innovators in Agricultural & Environmental Engineering to create real-world impact through robotics, AI, and sustainable technology.",
   keywords: [
     "SARE",
-    "sareengineers",
+    "sarengineers",
     "Agricultural Robotics",
     "Environmental Engineering",
     "Robotics Innovation",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "SARE | Society of Agricultural Robotic Engineers",
     description:
       "Bringing together innovators in Agricultural & Environmental Engineering to create real-world impact.",
-    url: "https://sareengineers.com",
+    url: "https://sarengineers.com",
     siteName: "SARE",
     images: [
       {
